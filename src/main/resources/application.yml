@@ -1,9 +1,16 @@
 spring:
   application:
     name: iban_back
-  http:
-    codecs:
-      log-request-details: true
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:h2:mem:testdb;
+    driver-class-name: org.h2.Driver
+    hikari:
+      username: iban
+      password: iban
 
 openiban:
   url: https://openiban.com/
@@ -12,14 +19,3 @@ server:
   servlet:
     context-path: /api
 
-logging:
-  level:
-    # Replace 'com.your.package.OpenIbanClient' with the actual package path to your Feign client interface
-    gs.iban_back.web.openiban.OpenIbanClient: DEBUG
-
-feign:
-  client:
-    config:
-      # 'openiban' is the name from @FeignClient(name = "openiban")
-      openiban:
-        loggerLevel: full

@@ -6,6 +6,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.UUID;
 
 @Data
 @Entity
@@ -18,7 +19,7 @@ public class OutboundTransfer {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Column(length = 36)
-    private String id;
+    private UUID id;
 
     @Column(length = 34)
     @NotNull
