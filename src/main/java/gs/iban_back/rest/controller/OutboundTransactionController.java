@@ -15,6 +15,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/transfer")
+@CrossOrigin
 public class OutboundTransactionController {
 
     private final OutboundTransferService service;

@@ -17,5 +17,5 @@ openiban:
 
 server:
   servlet:
-    context-path: /api
+    context-path: /iban/api
 
